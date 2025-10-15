@@ -1,18 +1,19 @@
-function factorial(n) {
-    if (n === 0) {
-        return 0;
-    }
-    
-    if (n === 1) {
-        return 1;
-    }
-    
-    return factorial (n - 1) * n;
-}
-
 function solution(balls, share) {
-    if (balls - share === 0) {
-        return 1;
+    var answer = 0;
+    var n = 1;
+    var m = 1;
+    var nm = 1;
+    var nminusm = balls - share;
+    
+    for(var i = balls; i > 0; i--) {
+        n *= i;
     }
-    return Math.round(factorial(balls) / (factorial(balls - share) * factorial(share)))
+    for(var i = nminusm; i > 0; i--) {
+        nm *= i;
+    }
+    for(var i = share; i > 0; i--) {
+        m *= i;
+    }
+    answer = Math.round(n / (nm * m));
+    return answer;
 }
