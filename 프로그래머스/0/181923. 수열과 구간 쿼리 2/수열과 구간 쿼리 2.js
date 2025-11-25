@@ -13,11 +13,7 @@ function solution(arr, queries) {
                 min = arr[j];
             }
         }
-        if (min === Infinity) {
-            answer.push(-1);
-        } else {
-            answer.push(min)
-        }
+        answer.push(min === Infinity ? -1 : min)
     }
     return answer;
 }
