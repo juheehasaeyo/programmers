@@ -1,8 +1,10 @@
 function solution(n) {
-    let x = Math.sqrt(n);
-    if(n % x*x == 0) {
-        return (x+1)*(x+1);
+    var answer = 0;
+    var res = Math.sqrt(n);
+    if(res % 1 === 0) {
+        answer = Math.pow(res+1, 2)
     } else {
-        return -1;
+        answer = -1;
     }
+    return answer;
 }
