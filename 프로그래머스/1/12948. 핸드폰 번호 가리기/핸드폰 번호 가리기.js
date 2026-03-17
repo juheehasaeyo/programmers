@@ -1,11 +1,7 @@
 function solution(phone_number) {
     var answer = '';
-    for(var i = 0; i < phone_number.length; i++) {
-        if (i < phone_number.length - 4) {
-            answer += '*';
-        } else {
-            answer += phone_number[i];
-        }
+    for (let i = phone_number.length; i > 4; i--) {
+        answer += '*';
     }
-    return answer;
+    return answer + phone_number.slice(-4);
 }
