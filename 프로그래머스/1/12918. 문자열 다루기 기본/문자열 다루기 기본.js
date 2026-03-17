@@ -1,12 +1,10 @@
 function solution(s) {
-    if (s.length !== 4 && s.length !== 6) {
-        return false;
-    }
+    var answer = true;
+    
     for (let i = 0; i < s.length; i++) {
-        if (isNaN(parseInt(s[i]))) {
-            return false;
-        }
+        if (isNaN(s[i])) return false;
     }
-
-    return true;
+    if(s.length !== 4 && s.length !== 6) answer = false;
+ 
+    return answer;
 }
