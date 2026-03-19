@@ -1,17 +1,18 @@
 function solution(s) {
     var answer = '';
-    var str = s.split(' ');
-    for(var i = 0; i < str.length; i++) {
-        for(var j = 0; j < str[i].length; j++) {
-            if(j % 2 == 0) {
-                answer += str[i][j].toUpperCase();
-            } else {
-                answer += str[i][j].toLowerCase();
-            }
-        }
-        // 마지막 단어가 아니면 공백 추가
-        if (i < str.length - 1) {
+    let idx = 0;
+
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === ' ') {
             answer += ' ';
+            idx = 0; // 공백 나오면 초기화
+        } else {
+            if (idx % 2 === 0) {
+                answer += s[i].toUpperCase();
+            } else {
+                answer += s[i].toLowerCase();
+            }
+            idx++;
         }
     }
     return answer;
