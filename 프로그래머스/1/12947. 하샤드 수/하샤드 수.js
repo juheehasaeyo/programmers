@@ -1,12 +1,12 @@
 function solution(x) {
-    var cnt = 0;
-    const strX = String(x);
-    for(var i = 0; i < strX.length; i++) {
-        cnt += Number(strX[i]);
+    var answer = true;
+    var strX = String(x);
+    var sum = 0;
+    
+    for (let i = 0; i < strX.length; i++) {
+        sum += Number(strX[i]);
     }
-    if(x % cnt == 0) {
-        return true;
-    } else {
-        return false;
-    }
+    x % sum === 0 ? answer = true : answer = false;
+    
+    return answer;
 }
