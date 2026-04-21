@@ -1,20 +1,16 @@
 function solution(s) {
     var answer = '';
-    s = s.split(' ')
-    console.log(s)
-    
-    var max = -99999;
-    var min = 99999;
-    
-    for (let i = 0; i < s.length; i++) {
-        if(Number(s[i]) > max) {
-            max = Number(s[i]);
+    var arr = s.split(' ').map(Number);
+    var min = Infinity;
+    var max = -Infinity;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
         }
-        if(Number(s[i] < min)) {
-            min = Number(s[i]);
+        if (arr[i] < min) {
+            min = arr[i];
         }
     }
     answer = min + ' ' + max;
-
     return answer;
 }
