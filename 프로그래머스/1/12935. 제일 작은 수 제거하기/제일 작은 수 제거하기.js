@@ -1,13 +1,16 @@
 function solution(arr) {
     var answer = [];
-     if(arr.length == 1) {
-        return [-1];
+    var min = Infinity;
+    if (arr.length === 1) return [-1];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
     }
-    let min = Math.min(...arr);
-    for (var i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
         if (arr[i] !== min) {
             answer.push(arr[i]);
         }
     }
-        return answer;
+    return answer;
 }
