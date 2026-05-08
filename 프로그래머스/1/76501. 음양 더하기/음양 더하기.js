@@ -1,8 +1,8 @@
 function solution(absolutes, signs) {
     var sum = 0;
-    for(var i = 0; i < signs.length; i++) {
-        if(signs[i] == false) {
-            absolutes[i] = absolutes[i] * -1;
+    for (let i = 0; i < absolutes.length; i++) {
+        if (signs[i] === false) {
+            absolutes[i] = -absolutes[i];
         }
         sum += absolutes[i];
     }
