@@ -1,8 +1,11 @@
 function solution(n) {
-    let answer = [];
-    let str = String(n);
-    for(let i = str.length - 1; i >= 0; i--) {
-        answer.push(Number(str[i]));
+    var answer = [];
+    n = String(n);
+    n = n.split('');
+
+    for (let i = n.length - 1; i >= 0; i--) {
+        answer.push(Number(n[i]));
     }
+    
     return answer;
 }
