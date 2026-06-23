@@ -1,7 +1,7 @@
 function solution(num_list) {
     var answer = [];
-    for(var i = 0; i < num_list.length; i++) {
-        answer[i] = num_list[num_list.length - i-1];
+    for (let i = num_list.length - 1; i >= 0; i--) {
+        answer.push(num_list[i]);
     }
     return answer;
 }
