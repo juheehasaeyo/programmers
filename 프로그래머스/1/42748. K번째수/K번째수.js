@@ -1,15 +1,18 @@
 function solution(array, commands) {
     var answer = [];
-    var realAnswer = [];
-    
-    for(let i = 0; i < commands.length; i++) {
-        for(let j = commands[i][0]; j <= commands[i][1]; j++) {
-            answer.push(array[j-1]);
+    for (let n = 0; n < commands.length; n++) {
+        var i = commands[n][0];
+        var j = commands[n][1];
+        var k = commands[n][2];
+        
+        var arr = [];
+        
+        for (let m = i - 1; m < j; m++) {
+            arr.push(array[m]);
         }
-        answer.sort((a, b) => a - b);
-        var k = commands[i][2];
-        realAnswer.push(answer[k-1]);
-        answer = [];
+        arr.sort((a, b) => a - b);
+        answer.push(arr[k-1])      
     }
-    return realAnswer;
+    
+    return answer;
 }
