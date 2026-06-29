@@ -1,18 +1,15 @@
 function solution(s) {
-    const numbers = {
-        "zero": "0",
-        "one": "1",
-        "two": "2",
-        "three": "3",
-        "four": "4",
-        "five": "5",
-        "six": "6",
-        "seven": "7",
-        "eight": "8",
-        "nine": "9"
-    };
-    for(let key in numbers) {
-        s = s.replaceAll(key, numbers[key]);
-    }
-    return Number(s);
+    var answer = 0;
+    s = s.replaceAll('zero', 0)
+    s = s.replaceAll('one', 1)
+    s = s.replaceAll('two', 2)
+    s = s.replaceAll('three', 3)
+    s = s.replaceAll('four', 4)
+    s = s.replaceAll('five', 5)
+    s = s.replaceAll('six', 6)
+    s = s.replaceAll('seven', 7)
+    s = s.replaceAll('eight', 8)
+    s = s.replaceAll('nine', 9)
+    answer = Number(s);
+    return answer;
 }
